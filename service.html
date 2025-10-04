@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localMart</title>
+    <link rel="icon" href="favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js"
+        integrity="sha512-7dlzSK4Ulfm85ypS8/ya0xLf3NpXiML3s6HTLu4qDq7WiJWtLLyrXb9putdP3/1umwTmzIvhuu9EW7gHYSVtCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            background-image: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%), url(favicon.png);
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            
+
+
+        }
+
+        header {
+            justify-content: space-between;
+            display: flex;
+            background-color: rgb(113, 216, 115);
+            width: 100%;
+            height: 70px;
+            align-items: center;
+            border-bottom: 2px solid rgb(69, 224, 219);
+            border-top: 2px solid;
+            border-radius: 5px;
+
+
+        }
+
+        .log img {
+            border-radius: 50px;
+        }
+
+        .logo {
+            display: flex;
+            padding: 10px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 100px;
+            padding: 10px;
+            float: left;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(46, 48, 205);
+            font-size: 30px;
+        }
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto);  /* 2 rows */
+    gap: 20px;  /* space between boxes */
+    padding: 20px;
+}
+
+.service-container > div {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.service-container > div:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+}.par{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    text-shadow: #ddd;
+}
+footer{
+    text-align: center;
+    font-size: medium;
+}
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="main">
+
+        <header>
+            <div class="logo">
+                <img src="LocalMart.png" alt="me" width="200px">
+
+
+
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2>🛒 Our Services</h2>
+            <p class="par">Welcome to Local Mart, your neighborhood’s trusted shopping platform. We are committed to making shopping
+                simple, affordable, and accessible for everyone. <br> Whether you are looking for fresh groceries,
+                household essentials, or daily needs, Local Mart is here to serve you with convenience and reliability.
+                <br>
+                Our goal is to bring the traditional charm of local markets together with the speed and comfort of
+                modern technology. <br> Explore the wide range of services we provide:</p>
+
+        <div class="service-container">
+            
+                
+            <div class="b1">
+                <h3>🚚 Home Delivery Service</h3>
+                <p>We understand that time is valuable. With Local Mart, you don’t have to worry about rushing to the
+                    store. <br>Place your order online, and our delivery team will bring it directly to your doorstep.
+                    <br>
+
+                    Fast and reliable delivery across your area <br>
+
+                    Fresh fruits, vegetables, and groceries carefully packed <br>
+
+                    Flexible delivery slots to suit your schedule <br>
+
+                    Whether it’s your weekly shopping or last-minute essentials, we make sure you get what you need <br>
+                    without leaving your home.</p>
+            </div>
+            <div class="b2">
+                <h3>🏬 Easy Pickup Option</h3>
+                <p>For customers who prefer to collect their items themselves, we offer a convenient pickup service. <br>
+
+                    Place your order online through our app or website <br>
+
+                    Choose a nearby Local Mart partner store <br>
+
+                    Collect your items at your convenience without waiting in queues <br>
+
+                    This service ensures you save time and shop stress-free.</p>
+            </div>
+            <div class="b3">
+                <h3>💰 Affordable & Transparent Pricing</h3>
+                <p>At Local Mart, we believe shopping should not be heavy on your wallet. <br>That’s why we work closely
+                    with local sellers to provide you the best deals and competitive prices. <br>
+
+                    Daily discounts and offers on popular items <br>
+
+                    Transparent pricing with no hidden charges <br>
+
+                    Value-for-money products for every household <br>
+
+                    Our aim is to make everyday essentials budget-friendly for every family.</p>
+            </div>
+            <div class="b4">
+                <h3>🛍️ Wide Range of Products</h3>
+                <p>Local Mart is more than just a grocery store—it’s a one-stop platform for all your daily needs. <br> Our
+                    catalog includes:
+
+                    Fresh fruits, vegetables, dairy, and bakery items <br>
+
+                    Grains, pulses, oils, and packaged foods <br>
+
+                    Household cleaning and kitchen essentials <br>
+
+                    Personal care and wellness products <br>
+
+                    We continuously expand our product range to give you more choices and better convenience.</p>
+            </div>
+            <div class="b5">
+                <h3>📞 Customer Care & Support</h3>
+                <p>We care about our customers as much as we care about our products. <br> Our dedicated support team is
+                    always available to assist you with: <br>
+
+                    Order tracking and delivery updates <br>
+
+                    Return or replacement requests <br>
+
+                    Answering queries about products and  service <br>
+
+                    Your satisfaction is our priority, and we work hard to ensure a smooth shopping experience every
+                    time.</p>
+            </div>
+            <div class="b6">
+                <h3>🌱 Supporting Local Sellers</h3>
+                <p>Local Mart is not just about customers, it’s also about empowering local shopkeepers and small
+                    businesses. <br> By shopping with us, you help local vendors grow and reach more customers in your area.
+                </p>
+            </div>
+        </div>
+        
+
+        </div>
+
+    </div>
+    <footer>@visit$localmart</footer>
+
+</body>

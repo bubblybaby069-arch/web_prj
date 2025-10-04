@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Mart - Contact Us</title>
+    <link rel="icon" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            background-image: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%), url(favicon.png);
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            
+
+
+        }
+
+        header {
+            justify-content: space-between;
+            display: flex;
+            background-color: rgb(113, 216, 115);
+            width: 100%;
+            height: 70px;
+            align-items: center;
+            border-bottom: 2px solid rgb(69, 224, 219);
+            border-top: 2px solid;
+            border-radius: 5px;
+            position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+
+
+        }
+
+        .log img {
+            border-radius: 50px;
+        }
+
+        .logo {
+            display: flex;
+            padding: 10px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 100px;
+            padding: 10px;
+            float: left;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(46, 48, 205);
+            font-size: 30px;}
+
+        .intro {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+        }
+
+        .intro h2 {
+            color: #2e30cd;
+            margin-bottom: 10px;
+        }
+
+        /* One column, six rows */
+        .service-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            /* 1 column */
+            grid-template-rows: repeat(6, 1fr);
+            /* 6 rows */
+            gap: 20px;
+            padding: 20px;
+            height: calc(100vh - 150px);
+            /* full screen minus header/intro */
+        }
+
+        .service-container>div {
+            background: #fff;
+            border: 2px solid #14e725;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-container>div:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #010105e0;
+            font-size: 50px;
+        
+        }
+
+        .service-container h3 {
+            margin-bottom: 10px;
+            color: #2e30cd;
+        }
+
+        /* Contact form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #2e30cd;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #09db64;
+        }
+        ion-icon{
+    color: #1751e3;
+    font-size: 30px;
+    padding-left: 14px;
+    padding-top: 5px;
+    transition: 0.3s ease;
+}
+ion-icon:hover{
+    color: #f4470d;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="LocalMart.png" alt="Local Mart Logo" width="200px">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h2>📞 Contact Us – Local Mart</h2>
+        <p>We’re always happy to hear from our customers! Whether you want to know more about our products, delivery
+            services, or partnership opportunities, we’re just a call or click away.</p>
+    </section>
+
+    <div class="service-container">
+        <div class="b1">
+            <h3>📱 Customer Support</h3>
+            <p>Phone: +91 7795711583 <br>
+                WhatsApp: +91 9925986525 <br>
+                Email: support@localmart.com</p>
+        </div>
+        <div class="b2">
+            <h3>🕒 Working Hours</h3>
+            <p>Everday <br>6 AM To 11 PM
+                
+            </p>
+        </div>
+        <div class="b3">
+            <h3>💬 Quick Contact Form</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject">
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="b4">
+            <h3>📦 Order & Delivery</h3>
+            <p><a href="#">Track your order</a><br>
+                Easy 7-day return policy <br>
+                Free delivery on orders above ₹499</p>
+        </div>
+        <div class="b5">
+            <h3>🤝 Partnerships</h3>
+            <p>Vendors & suppliers are welcome! <br>
+                📧 Email: partners@localmart.com</p>
+        </div>
+        <div class="b6">
+            <h3>🌐 Connect With Us</h3>
+            <p>
+                <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon>facebook</a> <br>
+                <a href="https://www.instagram.com/accounts/login/?hl=en"><ion-icon name="logo-instagram"></ion-icon>instagram</a> <br>
+                <a href="https://x.com/i/flow/login?lang=en"><ion-icon name="logo-twitter"></ion-icon>twitter</a><br>
+            </p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+
+</html>
