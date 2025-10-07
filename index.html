@@ -18,10 +18,18 @@
         <header>
             <div class="logo">
                 <img src="LocalMart.png" alt="me" width="200px">
+                
 
 
 
             </div>
+            <div class="darkmode-toggle">
+        <label class="switch">
+          <input type="checkbox" id="modetoggle" onclick="toggleMode()">
+          <span class="slider"></span>
+        </label>
+        <div class="mode-label" id="modelabel">Light Mode</div>
+      </div>
             <nav>
                 <ul>
                     
@@ -90,7 +98,10 @@ Your neighborhood store, just a click away.
                     </div>
                 </div>
     </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"
+></script>
+<script src="mode.js"></script>
+    
 </body>
 
 </html>

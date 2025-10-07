@@ -4,7 +4,7 @@
 }
 
 .main {
-    background-image: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%), url(favicon.png);
+    background-image: linear-gradient(to top, rgba(13, 13, 13, 0.689)10%, rgba(12, 9, 9, 0.886)50%), url(favicon.png);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -211,4 +211,107 @@ a {
     top: 50%;
     left: 50%;
 
+}
+
+/* ===== DARK / LIGHT MODE STYLES ===== */
+body {
+  transition: background-color 0.4s, color 0.4s;
+  font-family: Arial, sans-serif;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #efe7e7;
+}
+
+/* Adjust backgrounds */
+.light-mode .main {
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(230, 230, 230, 0.8)), url(favicon.png);
+}
+
+.dark-mode .main {
+  background-image: linear-gradient(to top, rgba(13, 13, 13, 0.8), rgba(12, 9, 9, 0.9)), url(favicon.png);
+}
+
+/* Dark mode colors */
+.dark-mode header {
+  background-color: #1b3a24;
+  border-bottom: 2px solid #28a745;
+}
+
+.dark-mode a {
+  color: #66b3ff;
+}
+
+.dark-mode .content h1,
+.dark-mode .content .par {
+  color: #21f06f;
+}
+
+.dark-mode .btnn {
+  background: #1e8e3e;
+}
+
+/* === TOGGLE SWITCH === */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.mode-label {
+  margin-top: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.darkmode-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
 }
