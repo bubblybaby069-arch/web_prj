@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localMart</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .main {
+      background-image: linear-gradient(to top, rgba(13, 13, 13, 0.689) 10%, rgba(12, 9, 9, 0.886) 50%), url(favicon.png);
+      background-position: center;
+      background-size: cover;
+      min-height: 100vh;
+    }
+
+    header {
+      justify-content: space-between;
+      display: flex;
+      background-color: rgb(113, 216, 115);
+      width: 100%;
+      height: 70px;
+      align-items: center;
+      border-bottom: 2px solid rgb(69, 224, 219);
+      border-top: 2px solid;
+      border-radius: 5px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5000;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      width: 180px;
+      border-radius: 10px;
+    }
+
+    /* 🔍 Search Bar */
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-box {
+      position: relative;
+      width: 500px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 8px 40px 8px 15px;
+      border-radius: 25px;
+      border: 2px solid #ccc;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search-box i {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #555;
+    }
+
+    /* 🛒 Icons */
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      position: relative;
+    }
+
+    .icons i {
+      font-size: 22px;
+      color: #0b0b0b;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .icons i:hover {
+      color: #fff;
+    }
+
+    /* ⬇️ Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      list-style: none;
+      padding: 10px 0;
+      width: 170px;
+      text-align: left;
+    }
+
+    .dropdown-menu li {
+      padding: 10px 15px;
+      cursor: pointer;
+      color: #3587e4;
+      transition: 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dropdown-menu li:hover {
+      background-color: #c7dfe4;
+    }
+
+    .dropdown.active .dropdown-menu {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 🌙 Dark Mode */
+    body.dark {
+      background-color: #121212;
+      color: #e0e0e0;
+      transition: all 0.4s ease-in-out;
+    }
+
+    body.dark header {
+      background-color: #1f1f1f;
+      border-color: #333;
+    }
+
+    body.dark a,
+    body.dark i {
+      color: #00e1ff;
+    }
+
+    body.dark .dropdown-menu {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+      border: 1px solid #333;
+    }
+
+    body.dark .dropdown-menu li:hover {
+      background-color: #333;
+    }
+    body.dark .service-container > div {
+  background-color: #1e1e1e;      /* dark card background */
+  border-color: #333;
+  color: #f1f1f1;
+  box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.15);
+}
+
+body.dark .service-container > div:hover {
+  background-color: #262626;
+  box-shadow: 0px 6px 12px rgba(0, 255, 255, 0.25);
+}
+
+body.dark h2 {
+   background-color: #333;
+  color: #d2d3d3;
+}
+
+body.dark footer {
+  background-color: #1f1f1f;
+  color: #00ffa6;
+  border-top: 1px solid #00ffa6;
+}
+
+body.dark .theme-toggle {
+  background-color: #333;
+  color: #00ffa6;
+  border-color: #00ffa6;
+}
+body.dark .par{
+  background-color: #333;
+  color: #d2d3d3;
+  border-color: #00ffa6;
+}
+    .service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto);  /* 2 rows */
+    gap: 20px;  /* space between boxes */
+    padding: 20px;
+}
+
+.service-container > div {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.service-container > div:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+}.par{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    text-shadow: #ddd;
+}
+footer{
+    text-align: center;
+    font-size: medium;
+}
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <header>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="LocalMart.png" alt="LocalMart">
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" placeholder="Search products..." id="searchInput">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+
+        <!-- Dropdown -->
+        <div class="dropdown" id="menuDropdown">
+  <i class="fas fa-angle-down" id="dropdownToggle"></i>
+  <ul class="dropdown-menu">
+    <li>
+      <a href="admin.html">
+        Home <i class="fas fa-home"></i>
+      </a>
+    </li>
+    <li>
+      <a href="contact.html">
+        Contact <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+    <li>
+      <a href="index.html">
+        Logout <i class="fas fa-sign-out-alt"></i>
+      </a>
+    </li>
+    <li id="modeToggle">
+      <a href="#" id="toggleMode">
+        Mode <i class="fas fa-moon"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+      </div>
+    </header>
+    <h2>🛒 Our Services</h2>
+            <p class="par">Welcome to Local Mart, your neighborhood’s trusted shopping platform. We are committed to making shopping
+                simple, affordable, and accessible for everyone. <br> Whether you are looking for fresh groceries,
+                household essentials, or daily needs, Local Mart is here to serve you with convenience and reliability.
+                <br>
+                Our goal is to bring the traditional charm of local markets together with the speed and comfort of
+                modern technology. <br> Explore the wide range of services we provide:</p>
+
+        <div class="service-container">
+            
+                
+            <div class="b1">
+                <h3>🚚 Home Delivery Service</h3>
+                <p>We understand that time is valuable. With Local Mart, you don’t have to worry about rushing to the
+                    store. <br>Place your order online, and our delivery team will bring it directly to your doorstep.
+                    <br>
+
+                    Fast and reliable delivery across your area <br>
+
+                    Fresh fruits, vegetables, and groceries carefully packed <br>
+
+                    Flexible delivery slots to suit your schedule <br>
+
+                    Whether it’s your weekly shopping or last-minute essentials, we make sure you get what you need <br>
+                    without leaving your home.</p>
+            </div>
+            <div class="b2">
+                <h3>🏬 Easy Pickup Option</h3>
+                <p>For customers who prefer to collect their items themselves, we offer a convenient pickup service. <br>
+
+                    Place your order online through our app or website <br>
+
+                    Choose a nearby Local Mart partner store <br>
+
+                    Collect your items at your convenience without waiting in queues <br>
+
+                    This service ensures you save time and shop stress-free.</p>
+            </div>
+            <div class="b3">
+                <h3>💰 Affordable & Transparent Pricing</h3>
+                <p>At Local Mart, we believe shopping should not be heavy on your wallet. <br>That’s why we work closely
+                    with local sellers to provide you the best deals and competitive prices. <br>
+
+                    Daily discounts and offers on popular items <br>
+
+                    Transparent pricing with no hidden charges <br>
+
+                    Value-for-money products for every household <br>
+
+                    Our aim is to make everyday essentials budget-friendly for every family.</p>
+            </div>
+            <div class="b4">
+                <h3>🛍️ Wide Range of Products</h3>
+                <p>Local Mart is more than just a grocery store—it’s a one-stop platform for all your daily needs. <br> Our
+                    catalog includes:
+
+                    Fresh fruits, vegetables, dairy, and bakery items <br>
+
+                    Grains, pulses, oils, and packaged foods <br>
+
+                    Household cleaning and kitchen essentials <br>
+
+                    Personal care and wellness products <br>
+
+                    We continuously expand our product range to give you more choices and better convenience.</p>
+            </div>
+            <div class="b5">
+                <h3>📞 Customer Care & Support</h3>
+                <p>We care about our customers as much as we care about our products. <br> Our dedicated support team is
+                    always available to assist you with: <br>
+
+                    Order tracking and delivery updates <br>
+
+                    Return or replacement requests <br>
+
+                    Answering queries about products and  service <br>
+
+                    Your satisfaction is our priority, and we work hard to ensure a smooth shopping experience every
+                    time.</p>
+            </div>
+            <div class="b6">
+                <h3>🌱 Supporting Local Sellers</h3>
+                <p>Local Mart is not just about customers, it’s also about empowering local shopkeepers and small
+                    businesses. <br> By shopping with us, you help local vendors grow and reach more customers in your area.
+                </p>
+            </div>
+        </div>
+        
+
+        </div>
+
+    </div>
+    <footer>@visit$localmart</footer>
+  </div>
+
+  <script>
+    // 🌙 Dark Mode Toggle
+    const modeToggle = document.getElementById('modeToggle');
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+
+      const icon = modeToggle.querySelector('i');
+      if (document.body.classList.contains('dark')) {
+        modeToggle.firstChild.textContent = 'Light Mode ';
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        modeToggle.firstChild.textContent = 'Mode ';
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+
+    // ⬇️ Dropdown Toggle
+    const dropdown = document.getElementById('menuDropdown');
+    const dropdownToggle = document.getElementById('dropdownToggle');
+
+    dropdownToggle.addEventListener('click', () => {
+      dropdown.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target) && e.target !== dropdownToggle) {
+        dropdown.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>

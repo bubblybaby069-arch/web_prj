@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>localmart</title>
     <link rel="icon" href="favicon.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js" integrity="sha512-7dlzSK4Ulfm85ypS8/ya0xLf3NpXiML3s6HTLu4qDq7WiJWtLLyrXb9putdP3/1umwTmzIvhuu9EW7gHYSVtCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js"
+        integrity="sha512-7dlzSK4Ulfm85ypS8/ya0xLf3NpXiML3s6HTLu4qDq7WiJWtLLyrXb9putdP3/1umwTmzIvhuu9EW7gHYSVtCQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
-    <style>
+  <style>
+
+
         * {
             margin: 0;
             padding: 0;
+            
         }
 
         .main {
-            background-image: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%), url(favicon.png);
+            background-image: linear-gradient(to top, rgba(13, 13, 13, 0.689)10%, rgba(12, 9, 9, 0.886)50%), url(favicon.png);
             background-position: center;
             background-size: cover;
             height: 100vh;
+            transition: background 0.5s ease;
 
 
         }
+        body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+    }
 
         header {
             justify-content: space-between;
@@ -59,113 +71,218 @@
             color: rgb(46, 48, 205);
             font-size: 30px;
         }
-        .form{
-    width: 250px;
-    height: 380px;
-    background-image: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%), url(LocalMart.png);
-    background-position: center;
-    background-size: cover;
-    
-    top: -20px;
-    left: 470px;
-    transform: translate(0%,-5%);
-    border-radius: 10px;
-    padding: 52px;
-    margin: 120px;
-    position: absolute;
+
+        .login-box {
+            width: 250px;
+            height: 380px;
+            background-image: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%), url(LocalMart.png);
+            background-position: center;
+            background-size: cover;
+
+            top: -20px;
+            left: 470px;
+            transform: translate(0%, -5%);
+            border-radius: 10px;
+            padding: 52px;
+            margin: 120px;
+            position: absolute;
+            animation: slideUp 0.6s ease;
+        }
+
+        .login-box h2 {
+            width: 220px;
+            font-family: sans-serif;
+            text-align: center;
+            color: #28de49;
+            font-size: 22px;
+            background-color: #dce0e1d0;
+            border-radius: 10px;
+            margin: 2px;
+            padding: 8px;
+        }
+
+        .login-box input {
+            width: 240px;
+            height: 35px;
+            background: transparent;
+            border-bottom: 1px solid #11e45e;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            color: #070900;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            font-family: sans-serif;
+        }
+
+        .login-box input:focus {
+            outline: none;
+        }
+
+        ::placeholder {
+            color: #306eebf2;
+            font-family: Arial;
+        }
+
+        .btnn {
+            width: 240px;
+            height: 40px;
+            background: #a0d8ac;
+            border: none;
+            margin-top: 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #ffffff;
+            transition: 0.4s ease;
+        }
+
+        .btnn:hover {
+            background: #12e243;
+            color: #bbe4c4;
+        }
+
+        .btnn a {
+            text-decoration: none;
+            color: #faf6f6;
+            font-weight: bold;
+        }
+
+        
+
+        .icons a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .icons ion-icon {
+            color: #fff;
+            font-size: 30px;
+            padding-left: 14px;
+            padding-top: 5px;
+            transition: 0.3s ease;
+        }
+
+        .icons ion-icon:hover {
+            color: #f4470d;
+        }
+        .logos {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    button {
+      width: 70%;
+      padding: 11px;
+      margin-top: 20px;
+      margin-left: 40px;
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      border: none;
+      color: white;
+      border-radius: 500px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(56, 249, 215, 0.4);
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+      height: 18px;
+    }
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .logos {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .theme-toggle {
+  margin-right: 20px;
+  background-color: #ffffff;
+  color: #28de49;
+  border: 2px solid #28de49;
+  width: 35px;           /* smaller size */
+  height: 35px;
+  border-radius: 50%;    /* round shape */
+  cursor: pointer;
+  font-size: 16px;       /* icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.form h2{
-    width: 220px;
-    font-family: sans-serif;
-    text-align: center;
-    color: #28de49;
-    font-size: 22px;
-    background-color: #dce0e1d0;
-    border-radius: 10px;
-    margin: 2px;
-    padding: 8px;
+.theme-toggle:hover {
+  background-color: #28de49;
+  color: #fff;
+  transform: scale(1.05);
 }
 
-.form input{
-    width: 240px;
-    height: 35px;
-    background: transparent;
-    border-bottom: 1px solid #11e45e;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    color: #070900;
-    font-size: 15px;
-    letter-spacing: 1px;
-    margin-top: 30px;
-    font-family: sans-serif;
-}
 
-.form input:focus{
-    outline: none;
-}
+    /* Dark Mode Styles */
+    body.dark {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
 
-::placeholder{
-    color: #306eebf2;
-    font-family: Arial;
-}
+    body.dark header {
+      background-color: #2b2b2b;
+      border-color: #555;
+    }
 
-.btnn{
-    width: 240px;
-    height: 40px;
-    background: #a0d8ac;
-    border: none;
-    margin-top: 30px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #ffffff;
-    transition: 0.4s ease;
-}
-.btnn:hover{
-    background: #12e243;
-    color: #bbe4c4;
-}
-.btnn a{
-    text-decoration: none;
-    color: #faf6f6;
-    font-weight: bold;
-}
-.form .link{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    padding-top: 20px;
-    text-align: center;
-    color: blue;
-}
-.form .link a{
-    text-decoration: none;
-    color: #ff7200;
-}
-.liw{
-    padding-top: 15px;
-    padding-bottom: 10px;
-    text-align: center;
-    color: blue;
-}
-.icons a{
-    text-decoration: none;
-    color: #fff;
-}
-.icons ion-icon{
-    color: #fff;
-    font-size: 30px;
-    padding-left: 14px;
-    padding-top: 5px;
-    transition: 0.3s ease;
-}
-.icons ion-icon:hover{
-    color: #f4470d;
-}
+    body.dark a {
+      color: #00e1ff;
+    }
+
+    body.dark .login-box {
+      background: rgba(30, 30, 30, 0.95);
+      color: #f1f1f1;
+      box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+    }
+
+    body.dark .login-box h2 {
+      background-color: #333;
+      color: #00ffa6;
+    }
+
+    body.dark button {
+      background: linear-gradient(135deg, #00ffa6 0%, #00c9ff 100%);
+    }
+
+    body.dark .theme-toggle {
+      background-color: #333;
+      color: #00ffa6;
+      border-color: #00ffa6;
+    }
 
     </style>
 </head>
+
 <body>
     <div class="main">
 
@@ -184,31 +301,69 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <button class="theme-toggle" id="themeToggle">🌙 </button>
         </header>
         <marquee behavior="slide" direction="right">local mart local mart </marquee>
-        <div class="form">
-                    <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter Password Here">
-                    <button class="btnn"><a href="#">Login</a></button>
+        <div class="login-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="logos" alt="User Logo">
+            <h2>Login</h2>
+            <input type="email" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button onclick="login()">Login</button>
+            <p class="error" id="error"></p>
 
-                    <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
-                    <p class="liw">Log in with </p>
-
-                    <div class="icons">
-                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
-                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
-                    </div>
-
-                </div>
-                
+            <div class="icons">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+            </div>
+            
 
         </div>
-        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    
+
+
+
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    </script>
+    <script>
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const error = document.getElementById("error");
+
+      if (username === "" || password === "") {
+        error.textContent = "⚠ Please enter both username and password!";
+      } else {
+        localStorage.setItem("username", username);
+        window.location.href = "admin.html";
+      }
+    }
+    const themeToggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      themeToggle.textContent = "☀️";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const darkMode = body.classList.contains("dark");
+
+      if (darkMode) {
+        themeToggle.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        themeToggle.textContent = "🌙 ";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+
 </body>
+
 </html>

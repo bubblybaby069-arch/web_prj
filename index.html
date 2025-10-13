@@ -23,13 +23,7 @@
 
 
             </div>
-            <div class="darkmode-toggle">
-        <label class="switch">
-          <input type="checkbox" id="modetoggle" onclick="toggleMode()">
-          <span class="slider"></span>
-        </label>
-        <div class="mode-label" id="modelabel">Light Mode</div>
-      </div>
+           
             <nav>
                 <ul>
                     
@@ -39,6 +33,7 @@
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </nav>
+             <button class="theme-toggle" id="themeToggle">🌙 </button>
         </header>
         <div class="content">
             <h1>LocalMart <br> Fresh. Fast. Affordable.</h1>
@@ -47,25 +42,25 @@ We keep things fresh, deliver fast, and make shopping affordable for everyone. <
 
 Your neighborhood store, just a click away.
             </p>
-            <div class="form">
-                    <h2>Login Here</h2>
-                    <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="" placeholder="Enter Password Here">
-                    <button class="btnn"><a href="#">Login</a></button>
+            <div class="login-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="logos" alt="User Logo">
+            <h2>Login</h2>
+            <input type="email" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button onclick="login()">Login</button>
+            <p class="error" id="error"></p>
 
-                    <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
-                    <p class="liw">Log in with </p>
+            <div class="icons">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+            </div>
+            
 
-                    <div class="icons">
-                        <a href="https://www.facebook.com/help/668969529866328/"><ion-icon name="logo-facebook"></ion-icon></a>
-                        <a href="https://www.instagram.com/accounts/login/?hl=en"><ion-icon name="logo-instagram"></ion-icon></a>
-                        <a href="https://x.com/i/flow/login?lang=en"><ion-icon name="logo-twitter"></ion-icon></a>
-                        <a href="https://meet.google.com/"><ion-icon name="logo-google"></ion-icon></a>
-                        <a href="https://secure.skype.com/portal/overview"><ion-icon name="logo-skype"></ion-icon></a>
-                    </div>
+        </div>
 
-                </div>
 
 
         </div>
@@ -100,7 +95,43 @@ Your neighborhood store, just a click away.
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"
 ></script>
-<script src="mode.js"></script>
+
+<script>
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const error = document.getElementById("error");
+
+      if (username === "" || password === "") {
+        error.textContent = "⚠ Please enter both username and password!";
+      } else {
+        localStorage.setItem("username", username);
+        window.location.href = "admin.html";
+      }
+    }
+    const themeToggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      themeToggle.textContent = "☀️";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      const darkMode = body.classList.contains("dark");
+
+      if (darkMode) {
+        themeToggle.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        themeToggle.textContent = "🌙 ";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+
     
 </body>
 

@@ -78,48 +78,7 @@ a {
     letter-spacing: 2px;
 }
 
-.form {
-    width: 250px;
-    height: 380px;
-    background: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%);
-    position: absolute;
-    top: -20px;
-    left: 870px;
-    transform: translate(0%, -5%);
-    border-radius: 10px;
-    padding: 25px;
-}
 
-.form h2 {
-    width: 220px;
-    font-family: sans-serif;
-    text-align: center;
-    color: #28de49;
-    font-size: 22px;
-    background-color: #dce0e1d0;
-    border-radius: 10px;
-    margin: 2px;
-    padding: 8px;
-}
-
-.form input {
-    width: 240px;
-    height: 35px;
-    background: transparent;
-    border-bottom: 1px solid #11e45e;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    color: #070900;
-    font-size: 15px;
-    letter-spacing: 1px;
-    margin-top: 30px;
-    font-family: sans-serif;
-}
-
-.form input:focus {
-    outline: none;
-}
 
 ::placeholder {
     color: #306eebf2;
@@ -212,106 +171,163 @@ a {
     left: 50%;
 
 }
+.logos {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    button {
+      width: 70%;
+      padding: 11px;
+      margin-top: 20px;
+      margin-left: 40px;
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      border: none;
+      color: white;
+      border-radius: 500px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-/* ===== DARK / LIGHT MODE STYLES ===== */
-body {
-  transition: background-color 0.4s, color 0.4s;
-  font-family: Arial, sans-serif;
-}
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(56, 249, 215, 0.4);
+    }
 
-.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+      height: 18px;
+    }
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .logos {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
-.dark-mode {
-  background-color: #121212;
-  color: #efe7e7;
-}
-
-/* Adjust backgrounds */
-.light-mode .main {
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.6), rgba(230, 230, 230, 0.8)), url(favicon.png);
-}
-
-.dark-mode .main {
-  background-image: linear-gradient(to top, rgba(13, 13, 13, 0.8), rgba(12, 9, 9, 0.9)), url(favicon.png);
-}
-
-/* Dark mode colors */
-.dark-mode header {
-  background-color: #1b3a24;
-  border-bottom: 2px solid #28a745;
-}
-
-.dark-mode a {
-  color: #66b3ff;
-}
-
-.dark-mode .content h1,
-.dark-mode .content .par {
-  color: #21f06f;
-}
-
-.dark-mode .btnn {
-  background: #1e8e3e;
-}
-
-/* === TOGGLE SWITCH === */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked+.slider {
-  background-color: #2196F3;
-}
-
-input:checked+.slider:before {
-  transform: translateX(26px);
-}
-
-.mode-label {
-  margin-top: 5px;
-  font-size: 14px;
-  text-align: center;
-}
-
-.darkmode-toggle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    .theme-toggle {
   margin-right: 20px;
+  background-color: #ffffff;
+  color: #28de49;
+  border: 2px solid #28de49;
+  width: 35px;           /* smaller size */
+  height: 35px;
+  border-radius: 50%;    /* round shape */
+  cursor: pointer;
+  font-size: 16px;       /* icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
 }
+
+.theme-toggle:hover {
+  background-color: #28de49;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+    /* Dark Mode Styles */
+    body.dark {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+
+    body.dark header {
+      background-color: #2b2b2b;
+      border-color: #555;
+    }
+
+    body.dark a {
+      color: #00e1ff;
+    }
+
+    body.dark .login-box {
+      background: rgba(30, 30, 30, 0.95);
+      color: #f1f1f1;
+      box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+    }
+
+    body.dark .login-box h2 {
+      background-color: #333;
+      color: #00ffa6;
+    }
+
+    body.dark button {
+      background: linear-gradient(135deg, #00ffa6 0%, #00c9ff 100%);
+    }
+
+    body.dark .theme-toggle {
+      background-color: #333;
+      color: #00ffa6;
+      border-color: #00ffa6;
+    }
+    .login-box {
+            width: 250px;
+            height: 380px;
+            background-image: linear-gradient(to top, rgba(237, 235, 235, 0.689)10%, rgba(219, 218, 218, 0.886)50%), url(LocalMart.png);
+            background-position: center;
+            background-size: cover;
+
+            top: 5px;
+            left: 800px;
+            transform: translate(0%, -5%);
+            border-radius: 25px;
+            padding: 60px;
+            margin: 0px;
+            position: absolute;
+            animation: slideUp 0.6s ease;
+        }
+
+        .login-box h2 {
+            width: 220px;
+            font-family: sans-serif;
+            text-align: center;
+            color: #28de49;
+            font-size: 22px;
+            background-color: #dce0e1d0;
+            border-radius: 10px;
+            margin: 2px;
+            padding: 8px;
+        }
+
+        .login-box input {
+            width: 240px;
+            height: 35px;
+            background: transparent;
+            border-bottom: 1px solid #11e45e;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            color: #070900;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            font-family: sans-serif;
+        }
+
+        .login-box input:focus {
+            outline: none;
+        }
+
